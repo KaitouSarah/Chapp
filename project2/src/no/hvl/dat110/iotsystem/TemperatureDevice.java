@@ -9,14 +9,16 @@ public class TemperatureDevice {
 	public static void main(String[] args) {
 		
 		TemperatureSensor sn = new TemperatureSensor();
-		
-		// TODO - start
-		
-		// TODO - end
-		
+
+		Client client = new Client("TemperatureDevice", Common.BROKERHOST, Common.BROKERPORT);
+
+		client.connect();
+		for (int i = 0; i < COUNT; i++) {
+			int temperature = sn.read();
+			client.publish(Common.TEMPTOPIC, "The temperature is " + temperature);
+		}
+		client.disconnect();
 		System.out.println("Temperature device stopping ... ");
-		
-		throw new RuntimeException("not yet implemented");
 		
 	}
 }
