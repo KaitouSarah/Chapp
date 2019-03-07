@@ -19,7 +19,7 @@ public class DisplayDevice {
 
 		for (int i = 0; i < COUNT; i++) {
 			PublishMsg message = (PublishMsg) client.receive();
-			System.out.println("The temperature is " + message.getContent());
+			System.out.println("The temperature is " + message.getMessage());
 		}
 		client.disconnect();
 
