@@ -35,7 +35,7 @@ public class Test6Publish extends Test0Base {
 		
 		client.disconnect();
 
-		assertEquals("message from client on topic",msg.getMessage());
+		assertEquals("message from client on topic",msg.getContent());
 	
 	}
 

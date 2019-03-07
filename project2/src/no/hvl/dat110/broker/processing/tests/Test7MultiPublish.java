@@ -56,8 +56,8 @@ public class Test7MultiPublish extends Test0Base {
 		client1.disconnect();
 		client2.disconnect();
 
-		assertEquals("message from client on topic", msg1.getMessage());
-		assertEquals("message from client on topic", msg2.getMessage());
+		assertEquals("message from client on topic", msg1.getContent());
+		assertEquals("message from client on topic", msg2.getContent());
 
 	}
 
